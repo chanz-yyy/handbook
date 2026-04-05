@@ -95,8 +95,8 @@ def build_retriever(pdf_path: str | Sequence[str]):
     # vectorstore = Chroma.from_documents(?, embedding=?)
     # ============================================================
 
-    vectorstore = None  
-    retriever = None   
+    vectorstore = Chroma.from_documents(all_chunks, embedding=embeddings)
+    retriever = vectorstore.as_retriever(search_kwargs={"k": 3})
 
     # ============================================================
 

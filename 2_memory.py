@@ -15,8 +15,10 @@ After completing this file you will understand:
 
 from dotenv import load_dotenv
 from langchain_groq import ChatGroq
-from langchain_classic.chains import ConversationChain
-from langchain_classic.memory import ConversationBufferMemory
+from langchain.chains import ConversationChain
+from langchain.memory import ConversationBufferMemory
+#from langchain_classic.chains import ConversationChain
+#from langchain_classic.memory import ConversationBufferMemory
 
 load_dotenv()
 
@@ -40,7 +42,7 @@ llm = ChatGroq(
 # which works better with chat-style LLMs.
 # ============================================================
 
-memory = None
+memory = ConversationBufferMemory(return_messages=True)
 
 # ============================================================
 
